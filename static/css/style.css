@@ -202,17 +202,33 @@ footer {
 /* --- Movie Details Page Styles --- */
 
 .movie-details-container {
-  display: flex;
-  align-items: flex-start;
-  gap: 65px;
-
   max-width: 1200px;
   margin: 55px auto;
 
   background-color: #f4f5f6;
-  padding: 86px 90px;
+  padding: 48px 90px 86px;
   border-radius: 12px;
   box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.movie-details-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 65px;
+}
+
+.back-link {
+  margin-bottom: 20px;
+}
+
+.back-link a {
+  font-size: 18px;
+  text-decoration: none;
+  color: black;
+}
+
+.back-link a:hover {
+  text-decoration: underline;
 }
 
 .movie-poster {
@@ -280,11 +296,19 @@ footer {
   }
 
   .movie-details-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
     padding: 20px;
     margin: 30px 15px;
+  }
+
+  .movie-details-body {
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  }
+
+.back-link {
+  font-size: 12px;
+  margin-bottom: 15px;
   }
 
   .movie-poster img {
