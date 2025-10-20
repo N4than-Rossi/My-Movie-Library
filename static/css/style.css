@@ -5,13 +5,42 @@
   box-sizing: border-box;
 }
 
+:root {
+  --background-color: #edf2f4; 
+  --text-color: #000000;
+  --card-background-color: #FFFFFF;
+  --header-background-color: #2b2d42;
+  --footer-background-color: #f4f5f6;
+  --button-background-color: #ef233c;
+  --button-text-color: #FFFFFF;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --button-hover-color: rgba(0, 0, 0, 0.2);
+  --form-container-background-color:  #f4f5f6;
+  --movie-details-container-background-color: #f4f5f6;
+}
+
+body.dark-mode {
+  --background-color: #212529;
+  --text-color: #F8F9FA;
+  --card-background-color: #243649;
+  --header-background-color: #343A40;
+  --footer-background-color: #343A40;
+  --button-background-color: #1e2025;
+  --button-text-color: #ECEFF4;
+  --shadow-color: rgba(255, 255, 255, 0.1);
+  --button-hover-color: rgba(78, 78, 78, 0.2);
+  --form-container-background-color: #343A40;
+  --movie-details-container-background-color: #343A40;
+}
+
 body {
-  background-color: #edf2f4;
+  background-color: var(--background-color);
   font-family: Arial, Helvetica, sans-serif;
-  color: #000000;
+  color: var(--text-color);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 main {
@@ -19,7 +48,7 @@ main {
 }
 
 header {
-  background-color: #2b2d42;
+  background-color: var(--header-background-color);
   color: #ffffff;
   height: 80px;
 
@@ -34,9 +63,24 @@ header span {
   font-size: 36px;
 }
 
+header > div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#theme-toggle-button {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+}
+
 .add-button {
-  background-color: #ef233c;
-  color: #ffffff;
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
   width: 40px;
   height: 40px;
   font-size: 40px;
@@ -59,8 +103,30 @@ header a {
   color: inherit;
 }
 
+.search-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+#search-input {
+  width: 50%;
+  max-width: 400px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 20px;
+  border: 1px solid var(--border-color, #ccc);
+  background-color: var(--card-background-color, #fff);
+  color: var(--text-color, #000);
+  transition: all 0.3s;
+}
+#search-input:focus {
+  outline: none;
+  border-color: var(--button-background-color, #ef233c);
+  box-shadow: 0 0 5px var(--shadow-color, rgba(0,0,0,0.2));
+}
+
 footer {
-  background-color: #f4f5f6;
+  background-color: var(--footer-background-color);
   text-align: center;
   font-size: 16px;
   padding: 15.25px;
@@ -78,7 +144,7 @@ footer {
 }
 
 .movie-card {
-  background-color: #f4f5f6;
+  background-color: var(--card-background-color);
   border: 1px solid #8d99ae;
   border-radius: 12px;
   width: 200px;
@@ -90,7 +156,7 @@ footer {
 }
 
 .movie-card:hover {
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 16px 0px var(--button-hover-color);
 }
 
 .movie-card img {
@@ -148,7 +214,7 @@ footer {
 }
 
 .form-container {
-  background-color: #f4f5f6;
+  background-color: var(--form-container-background-color);
   padding: 33px 61px;
   border-radius: 12px;
   box-shadow: 0px 4px 4px 0px #00000040;
@@ -205,7 +271,7 @@ footer {
   max-width: 1200px;
   margin: 55px auto;
 
-  background-color: #f4f5f6;
+  background-color: var(--movie-details-container-background-color);
   padding: 48px 90px 86px;
   border-radius: 12px;
   box-shadow: 0px 4px 4px 0px #00000040;
@@ -224,7 +290,7 @@ footer {
 .back-link a {
   font-size: 18px;
   text-decoration: none;
-  color: black;
+  color: var(--text-color);
 }
 
 .back-link a:hover {

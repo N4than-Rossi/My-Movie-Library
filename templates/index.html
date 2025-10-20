@@ -3,6 +3,9 @@
 {% block title %} My Movie Library - Home{% endblock %}
 
 {% block content %}
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Seach for title...">
+            </div>
             <div class="movie-list-container">
                 {% for movie in movies %}
                 <a href="{{ url_for('movie_details', movie_id=movie.id)}}" class="movie-card-link">
@@ -25,4 +28,5 @@
 
                 {% endfor %}
             </div>
+            
 {% endblock %}
